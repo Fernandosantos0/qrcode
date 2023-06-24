@@ -51,7 +51,6 @@ function Qrcode() {
 
     this.mostrarResult = function(dado) {
         this.campo.value = '';
-        this.campo.focus();
 
         const result = document.getElementById('resultado');
         result.innerHTML = '';
