@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+@media screen and (max-width: 947px) {
+    .container {
+        width: 100vw;
+        max-width: 80%;
+    }
+
+    #campo-texto {
+        width: 90%;
+    }
+}
