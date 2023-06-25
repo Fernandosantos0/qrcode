@@ -67,3 +67,23 @@ body {
 #resultado > img {
     max-width: 100%;
 }
+
+.btn-download {
+    background-color: black;
+    color: #fff;
+    width: 23.5rem;
+    padding: .9rem 1.5rem;
+    font-size: 1.6rem;
+    text-decoration: none;
+    letter-spacing: 2px;
+    display: block;
+    margin: 0 auto;
+    border-radius: .5rem;
+    transition-property: background-color;
+    transition-duration: 1.2s;
+    transition-timing-function: linear;
+}
+
+.btn-download:hover {
+    background-color: rgb(37, 36, 36);
+}

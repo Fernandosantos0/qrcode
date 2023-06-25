@@ -49,15 +49,24 @@ function Qrcode() {
         this.mostrarResult(data);
     };
 
+    this.criarElementoHTML = (tag) => document.createElement(tag); 
+
     this.mostrarResult = function(dado) {
         this.campo.value = '';
 
         const result = document.getElementById('resultado');
         result.innerHTML = '';
 
-        const img = document.createElement('img'); // Criando um elemento <img>
+        const img = this.criarElementoHTML('img'); // Criando um elemento <img>
         img.src = URL.createObjectURL(dado); // Definindo o atributo src com a URL do blob
         result.appendChild(img);
+		
+		const linkDownload = this.criarElementoHTML('a');
+        linkDownload.href = URL.createObjectURL(dado);
+        linkDownload.className = 'btn-download';
+        linkDownload.textContent = 'Download do QrCode';
+        linkDownload.setAttribute('download', 'qrcode-imagem.png');
+        result.appendChild(linkDownload);
     };
 };
 
