@@ -4,6 +4,7 @@
 function Qrcode() {
     /* Propriedades */
     this.campo = document.getElementById('campo-texto');
+    this.msgSpan = document.getElementById('msg');
 
     this.iniciar = function() {
         this.clicaBotao();
@@ -15,7 +16,18 @@ function Qrcode() {
             const el = event.target;
 
             if(el.classList.contains('btn-criar-qrcode')) {
-                !this.campo.value === true ? window.alert('Campo vazio') : this.buscarDadosAPI(this.campo.value);
+
+                if(!this.campo.value) {
+                    this.msgSpan.classList.remove('ocultar');
+                    this.msgSpan.classList.add('mostrar');
+                    return;
+                } 
+
+                
+                this.msgSpan.classList.add('ocultar');
+                this.msgSpan.classList.remove('mostrar');
+                this.buscarDadosAPI(this.campo.value);
+                
             }
 
         }.bind(this));
@@ -28,7 +40,16 @@ function Qrcode() {
             if(tecla !== 'Enter') {
                 return;
             } else {
-                !this.campo.value === true ? window.alert('Campo vazio') : this.buscarDadosAPI(this.campo.value);
+                if(!this.campo.value) {
+                    this.msgSpan.classList.remove('ocultar');
+                    this.msgSpan.classList.add('mostrar');
+                    return;
+                } 
+
+                
+                this.msgSpan.classList.add('ocultar');
+                this.msgSpan.classList.remove('mostrar');
+                this.buscarDadosAPI(this.campo.value);
             }
         });
     };
@@ -65,7 +86,7 @@ function Qrcode() {
         linkDownload.href = URL.createObjectURL(dado);
         linkDownload.className = 'btn-download';
         linkDownload.textContent = 'Download do QrCode';
-        linkDownload.setAttribute('download', 'qrcode-imagem.png');
+        linkDownload.setAttribute('download', 'qrcode-imagem');
         result.appendChild(linkDownload);
     };
 };

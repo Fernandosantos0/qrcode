@@ -15,6 +15,10 @@
     font-family: var(--fonte-padrao);
 }
 
+*::selection {
+    background-color: transparent;
+}
+
 body {
     background: rgb(1,0,36);
     background: linear-gradient(90deg rgba(1,0,36,1) 0%, rgba(9,9,121,1) 41%, rgba(0,44,255,1) 100%);
@@ -31,6 +35,22 @@ body {
     padding: 2.5rem;
     width: 50%;
     border-radius: .5rem;
+}
+
+#msg {
+    color: red;
+    font-size: 1.8rem;
+    margin-top: 1.5rem;
+    letter-spacing: .3rem;
+    text-align: center;
+}
+
+.ocultar {
+    display: none;
+}
+
+.mostrar {
+    display: block;
 }
 
 #campo-texto {
