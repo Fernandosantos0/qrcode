@@ -1,6 +1,6 @@
 # Gerador de QrCode
 
-<p>Sistema gerador de QrCode</p>
+<p>Sistema gerador de QrCode, utilizando o API gerador de QrCode da InvertextoAPI (https://api.invertexto.com/)</p>
 
 ## Tecnologias Empregados:
 - HTML
